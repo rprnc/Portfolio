@@ -12,6 +12,7 @@
 </head>
 
 <body id="bg-img">
+    <!--  -->
     <header>
         <div class="menu-btn">
             <div class="btn-line"></div>
@@ -25,13 +26,13 @@
             </div>
             <ul class="menu-nav">
                 <li class="nav-item current">
-                    <a href="index.html" class="nav-link">H<em>o</em>me</a>
+                    <a href="index.html" class="nav-link hint">H<em>o</em>me</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link"><em>A</em>b<em>o</em>ut</a>
                 </li>
                 <li class="nav-item">
-                    <a href="work.html" class="nav-link">W<em>o</em>rk</a>
+                    <a href="work.html" class="nav-link">Pr<em>o</em>jects</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">C<em>o</em>nt<em>a</em>ct</a>
@@ -40,13 +41,33 @@
         </nav>
     </header>
 
+    <!-- -->
     <main id="home">
+        <!--  -->
         <h1 class="lg-heading">
-            RJP<span class="text-secondary">DE</span><a href="game1.html"><span class="text-tertiary">V</span></a>
+            RJP<span class="text-secondary">DE</span><a href="#"></a><span data-modal-target="#modal"
+                class="text-tertiary">V</span></button></a>
         </h1>
+
+        <!-- modal hidden in the V button -->
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">Password: </div>
+                <input type="text">
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+        <!-- subtitle -->
         <h2 class="sm-heading">
-            Developer/Programmer/Designer/Entrepreneur
+            Developer/Programmer/Designer
         </h2>
+
+        <!-- socials -->
         <div class="icons">
             <a href="mailto:rprnc082@gmail.com">
                 <button class="socials round">
@@ -68,7 +89,7 @@
     </main>
 
     <script src="js/main.js"></script>
-    <script src="js/colorChange.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

@@ -62,6 +62,8 @@
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
       color: #2286b1; }
+    .menu .nav-item.hint:hover {
+      color: black; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -87,6 +89,62 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: whitesmoke;
+  opacity: 0.75;
+  width: 500px;
+  max-width: 80%; }
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1); }
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black; }
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000; }
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  color: #000;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold; }
+
+.modal-body {
+  padding: 10px 15px; }
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none; }
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all; }
+
 @keyframes colorfade {
   0% {
     color: #2286b1; }
@@ -97,9 +155,9 @@
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg); }
+    transform: rotateY(0deg); }
   100% {
-    transform: translateY(6px) rotate(-90deg); } }
+    transform: rotateY(180deg); } }
 
 @keyframes fadeInAnimation {
   0% {
@@ -171,6 +229,7 @@ header {
   display: inline-block; }
   .text-tertiary:hover {
     animation-name: spin;
+    cursor: pointer;
     animation-duration: 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -239,6 +298,15 @@ main {
       transition: all 0.5s ease-out; }
     .projects .item a:hover .proj-text {
       visibility: visible; }
+
+.projects-sub {
+  display: grid;
+  margin: 3%;
+  grid-gap: 2rem;
+  grid-template-areas: "projimg projtxt projtxt projtxt"; }
+  .projects-sub .projimg img {
+    max-height: 20vh;
+    max-width: 20vw; }
 
 .boxes {
   display: flex;
@@ -383,7 +451,10 @@ button:after {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .projects-sub {
+    grid-template-columns: 1fr;
+    grid-template-areas: "projimg" "projtxt" "projtxt" "projtxt"; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -396,4 +467,7 @@ button:after {
     main .sm-heading {
       font-size: 0.7rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects-sub {
+    grid-template-columns: 1fr;
+    grid-template-areas: "projimg" "projtxt" "projtxt" "projtxt"; } }
